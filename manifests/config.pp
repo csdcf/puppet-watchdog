@@ -20,20 +20,17 @@ class watchdog::config {
           ensure => absent,
         }
         sysctl { 'kern.watchdog.auto':
-          ensure    => present,
-          permanent => yes,
-          value     => 0,
+          ensure => present,
+          value  => 0,
         }
       } else {
         sysctl { 'kern.watchdog.period':
-          ensure    => present,
-          permanent => yes,
-          value     => $period,
+          ensure => present,
+          value  => $period,
         }
         sysctl { 'kern.watchdog.auto':
-          ensure    => present,
-          permanent => yes,
-          value     => 0,
+          ensure => present,
+          value  => 0,
         }
       }
     }

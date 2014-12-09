@@ -70,7 +70,8 @@
       "version_requirement": ">=4.2.0 <5.0.0"
     },
     {
-      "name": "fiddyspence/sysctl"
+      "name": "herculesteam/augeasproviders_sysctl",
+      "version_requirement": ">=2.0.0 <3.0.0"
     }
   ]
 }
