@@ -30,7 +30,7 @@ class watchdog::config {
         }
         sysctl { 'kern.watchdog.auto':
           ensure => present,
-          value  => 0,
+          value  => 1,
         }
       }
     }
