@@ -2,6 +2,7 @@
 
 Tested with Travis CI
 
+[![Puppet Forge](http://img.shields.io/puppetforge/v/bodgit/watchdog.svg)](https://forge.puppetlabs.com/bodgit/watchdog)
 [![Build Status](https://travis-ci.org/bodgit/puppet-watchdog.svg?branch=master)](https://travis-ci.org/bodgit/puppet-watchdog)
 
 #### Table of Contents
