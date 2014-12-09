@@ -1,0 +1,6 @@
+# !!! Managed by Puppet !!!
+watchdog-device		= /dev/watchdog
+watchdog-timeout	= <%= @period %>
+interval		= <%= @tickle %>
+realtime		= yes
+priority		= 1

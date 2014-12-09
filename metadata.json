@@ -1,0 +1,76 @@
+{
+  "name": "bodgit-watchdog",
+  "version": "1.0.0",
+  "author": "bodgit",
+  "summary": "Puppet Module for managing hardware watchdogs",
+  "license": "Apache-2.0",
+  "source": "https://github.com/bodgit/puppet-watchdog",
+  "project_page": "https://github.com/bodgit/puppet-watchdog",
+  "issues_url": "https://github.com/bodgit/puppet-watchdog/issues",
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "OracleLinux",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Scientific",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "OpenBSD",
+      "operatingsystemrelease": [
+        "4.9",
+        "5.0",
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.4",
+        "5.5",
+        "5.6"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": "3.x"
+    }
+  ],
+  "tags": [
+    "tco",
+    "watchdog"
+  ],
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">=4.2.0 <5.0.0"
+    },
+    {
+      "name": "fiddyspence/sysctl"
+    }
+  ]
+}
