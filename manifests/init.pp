@@ -1,3 +1,52 @@
+# == Class: watchdog
+#
+# This class manages a hardware watchdog.
+#
+# === Parameters
+#
+# [*package_ensure*]
+#   Intended state of the package providing the watchdog daemon.
+#   Default: installed
+#
+# [*package_name*]
+#   The package name that provides the watchdog daemon.
+#   Default: watchdog
+#
+# [*period*]
+#   The watchdog timeout period.
+#   Default: 60
+#
+# [*service_enable*]
+#   Whether to enable the watchdog service.
+#   Default: true
+#
+# [*service_ensure*]
+#   Intended state of the watchdog service.
+#   Default: running
+#
+# [*service_manage*]
+#   Whether to manage the watchdog service or not.
+#   Default: true
+#
+# [*service_name*]
+#   The name of the watchdog service.
+#   Default: watchdog
+#
+# === Variables
+#
+# None.
+#
+# === Examples
+#
+#  class { 'watchdog': }
+#
+# === Authors
+#
+# Matt Dainty <matt@bodgit-n-scarper.com>
+#
+# === Copyright
+#
+# Copyright 2014 Matt Dainty, unless otherwise noted.
 #
 class watchdog (
   $package_ensure = $::watchdog::params::package_ensure,
