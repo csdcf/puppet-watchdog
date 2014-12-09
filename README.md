@@ -119,8 +119,7 @@ There is no standard for watchdog timeout periods so it's potentially tricky
 to ship a default value that works on all hardware however hopefully a period
 of 60 seconds should work in 99% of cases.
 
-This module has been built on and tested against Puppet 2.7 and higher.
-Puppet 2.7 support is slated for removal at the next major version.
+This module has been built on and tested against Puppet 3.0 and higher.
 
 The module has been tested on:
 
