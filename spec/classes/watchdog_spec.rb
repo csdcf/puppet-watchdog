@@ -14,7 +14,7 @@ describe 'watchdog' do
     end
   end
 
-  context 'on RedHat' do
+  context 'on RedHat', :compile do
     let(:facts) do
       {
         :osfamily => 'RedHat'
