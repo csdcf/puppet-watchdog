@@ -60,7 +60,7 @@ class watchdog (
 
   validate_string($package_ensure)
   validate_string($package_name)
-  validate_re($period, '^\d+$')
+  validate_integer($period)
   validate_bool($service_enable)
   validate_re($service_ensure, '^(running|stopped)$')
   validate_bool($service_manage)
