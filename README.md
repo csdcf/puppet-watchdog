@@ -2,8 +2,10 @@
 
 Tested with Travis CI
 
-[![Puppet Forge](http://img.shields.io/puppetforge/v/bodgit/watchdog.svg)](https://forge.puppetlabs.com/bodgit/watchdog)
 [![Build Status](https://travis-ci.org/bodgit/puppet-watchdog.svg?branch=master)](https://travis-ci.org/bodgit/puppet-watchdog)
+[![Coverage Status](https://coveralls.io/repos/bodgit/puppet-watchdog/badge.svg?branch=master&service=github)](https://coveralls.io/github/bodgit/puppet-watchdog?branch=master)
+[![Puppet Forge](http://img.shields.io/puppetforge/v/bodgit/watchdog.svg)](https://forge.puppetlabs.com/bodgit/watchdog)
+[![Dependency Status](https://gemnasium.com/bodgit/puppet-watchdog.svg)](https://gemnasium.com/bodgit/puppet-watchdog)
 
 #### Table of Contents
 
@@ -14,6 +16,9 @@ Tested with Travis CI
     * [Setup requirements](#setup-requirements)
     * [Beginning with watchdog](#beginning-with-watchdog)
 4. [Usage - Configuration options and additional functionality](#usage)
+    * [Classes and Defined Types](#classes-and-defined-types)
+        * [Class: watchdog](#class-watchdog)
+    * [Examples](#examples)
 5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
 5. [Limitations - OS compatibility, etc.](#limitations)
 6. [Development - Guide for contributing to the module](#development)
@@ -53,6 +58,47 @@ include ::watchdog
 
 ## Usage
 
+### Classes and Defined Types
+
+#### Class: `watchdog`
+
+**Parameters within `watchdog`:**
+
+##### `manage_package`
+
+Whether to manage the package resource or not.
+
+##### `package_ensure`
+
+Intended state of the package providing the watchdog daemon.
+
+##### `package_name`
+
+The package name that provides the watchdog daemon.
+
+##### `period`
+
+The watchdog timeout period.
+If it has not been reset after this period then the machine is rebooted.
+
+##### `service_enable`
+
+Whether to enable the watchdog service.
+
+##### `service_ensure`
+
+Intended state of the watchdog service.
+
+##### `service_manage`
+
+Whether to manage the watchdog service or not.
+
+##### `service_name`
+
+The name of the watchdog service.
+
+### Examples
+
 If you want to use something else to manage the watchdog daemon, you can do:
 can do:
 
@@ -76,42 +122,16 @@ class { '::watchdog':
 
 ### Classes
 
-* watchdog: Main class for installation and service management.
-* watchdog::config: Main class for watchdog configuration/management.
-* watchdog::install: Handles package installation.
-* watchdog::params: Different configuration data for different systems.
-* watchdog::service: Handles the watchdog service.
+#### Public Classes
 
-### Parameters
+* [`watchdog`](#class-watchdog): Main class for installing the watchdog.
 
-####`package_ensure`
+#### Private Classes
 
-Intended state of the package providing the watchdog daemon.
-
-####`package_name`
-
-The package name that provides the watchdog daemon.
-
-####`period`
-
-The watchdog timeout period.
-If it has not been reset after this period then the machine is rebooted.
-
-####`service_enable`
-
-Whether to enable the watchdog service.
-
-####`service_ensure`
-
-Intended state of the watchdog service.
-
-####`service_manage`
-
-Whether to manage the watchdog service or not.
-
-####`service_name`
-
-The name of the watchdog service.
+* `watchdog::config`: Main class for watchdog configuration/management.
+* `watchdog::install`: Handles package installation.
+* `watchdog::params`: Different configuration data for different systems.
+* `watchdog::service`: Handles the watchdog service.
 
 ## Limitations
 
@@ -124,10 +144,11 @@ This module has been built on and tested against Puppet 3.0 and higher.
 The module has been tested on:
 
 * RedHat Enterprise Linux 5/6/7
-* OpenBSD 5.6 (anything as far back as 4.9 should work)
+* OpenBSD 5.6/5.7/5.8/5.9 (anything as far back as 4.9 should work)
 
 Testing on other platforms has been light and cannot be guaranteed.
 
-## Authors
+## Development
 
-* Matt Dainty <matt@bodgit-n-scarper.com>
+Please log issues or pull requests at
+[github](https://github.com/bodgit/puppet-watchdog).
