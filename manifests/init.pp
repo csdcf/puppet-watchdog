@@ -49,6 +49,7 @@
 # Copyright 2014 Matt Dainty, unless otherwise noted.
 #
 class watchdog (
+  $manage_package = $::watchdog::params::manage_package,
   $package_ensure = $::watchdog::params::package_ensure,
   $package_name   = $::watchdog::params::package_name,
   $period         = $::watchdog::params::period,
@@ -58,6 +59,7 @@ class watchdog (
   $service_name   = $::watchdog::params::service_name
 ) inherits ::watchdog::params {
 
+  validate_bool($manage_package)
   validate_string($package_ensure)
   validate_string($package_name)
   validate_integer($period)

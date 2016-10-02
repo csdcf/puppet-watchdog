@@ -6,6 +6,7 @@ class watchdog::params {
   case $::osfamily {
     'RedHat': {
       # Linux requires something in userland to keep tickling /dev/watchdog
+      $manage_package = true
       $package_name   = 'watchdog'
       $package_ensure = 'installed'
       $service_enable = true
@@ -17,6 +18,7 @@ class watchdog::params {
       # OpenBSD can can tickle the watchdog device from within the kernel or
       # use watchdogd(8) which is part of the base system to test that
       # process scheduling is still functioning
+      $manage_package = false
       $package_name   = undef
       $package_ensure = 'absent'
       $service_enable = true
