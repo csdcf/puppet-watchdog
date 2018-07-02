@@ -3,6 +3,10 @@ class watchdog::params {
 
   $period = 60
 
+  $min_memory              = 12800
+  $realtime                = yes
+  $priority                = 1
+
   case $::osfamily {
     'RedHat': {
       # Linux requires something in userland to keep tickling /dev/watchdog

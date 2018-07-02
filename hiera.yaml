@@ -1,0 +1,9 @@
+version: 5
+hierarchy:
+  # - name: "watchdog class parameter defaults"
+  #   data_hash: "watchdog::params"
+  - name: "Common values for the auristor module"
+    path: "common.yaml"
+defaults:
+  data_hash: yaml_data
+  datadir: data

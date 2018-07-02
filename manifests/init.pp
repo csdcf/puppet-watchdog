@@ -56,7 +56,11 @@ class watchdog (
   $service_enable = $::watchdog::params::service_enable,
   $service_ensure = $::watchdog::params::service_ensure,
   $service_manage = $::watchdog::params::service_manage,
-  $service_name   = $::watchdog::params::service_name
+  $service_name   = $::watchdog::params::service_name,
+  $min_memory     = $::watchdog::params::min_memory,
+  $realtime       = $::watchdog::params::realtime,
+  $priority       = $::watchdog::params::priority,
+
 ) inherits ::watchdog::params {
 
   validate_bool($manage_package)
